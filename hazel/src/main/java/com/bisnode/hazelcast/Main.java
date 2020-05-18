@@ -130,7 +130,7 @@ public class Main {
 
         awaitInitialization();
 
-        log.info("Web server started on port 8080");
+        log.info("Web server started on port 8082");
     }
 
 
