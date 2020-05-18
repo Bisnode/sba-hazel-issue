@@ -1,0 +1,36 @@
+*~
+.gradle
+/from/
+/build/
+/out/
+*/out/
+*/build/
+/sdp-engine-core/out/
+/sdp-spring-boot-starter/out/
+/sdp-input-api/out/
+!gradle/wrapper/gradle-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+.attach_pid*
+lombok.config
+
+### NetBeans ###
+nbproject/private/
+from/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/

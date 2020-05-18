@@ -1,0 +1,38 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.26'
+    compile 'org.slf4j:slf4j-simple:1.7.26'
+
+    compile 'com.hazelcast:hazelcast:3.10.6'
+
+    compile 'com.sparkjava:spark-core:2.7.2'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.bisnode.hazelcast.Main'
+    }
+}
+
+//create a single Jar with all dependencies
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'com.bisnode.hazelcast.Main'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+wrapper.gradleVersion='6.4'
